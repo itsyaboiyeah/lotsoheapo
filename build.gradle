@@ -1,0 +1,14 @@
+    plugins {
+        id "scala"
+        id "com.diffplug.spotless" version "5.8.1"
+    }
+subprojects {
+    apply plugin: 'scala'
+    apply plugin: "com.diffplug.spotless"
+    spotless {
+        ratchetFrom 'origin/master'
+        scala {
+            scalafmt()
+        }
+    }
+}
